@@ -22,6 +22,25 @@
                       </properties>
          </profile>
          </profiles>
+         <distributionManagement>
+    <!-- use the following if you're not using a snapshot version. -->
+    <repository>
+        <id>nexus</id>
+        <name>RepositoryProxyRel</name>
+        <url>http://localhost:8282/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+        <id>nexus</id>
+        <name>RepositoryProxySnap</name>
+        <url>http://localhost:8282/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <site>
+        <id>site-server</id>
+        <name>Test Project Site</name>
+        <url>file:///tmp/single-module-site</url>
+    </site>
+</distributionManagement>
+
   <modules>
     <module>multi-module</module>
     <module>single-module</module>
