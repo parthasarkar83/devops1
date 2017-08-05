@@ -21,13 +21,8 @@
     <module>webapp</module>
   </modules>
 
-  <distributionManagement>
-    <site>
-      <id>site-server</id>
-      <name>Test Project Site</name>
-      <url>file:///tmp/multi-module-site</url>
-    </site>
-      <!-- use the following if you're not using a snapshot version. -->
+ <distributionManagement>
+    <!-- use the following if you're not using a snapshot version. -->
     <repository>
         <id>nexus</id>
         <name>RepositoryProxyRel</name>
@@ -39,7 +34,7 @@
         <name>RepositoryProxySnap</name>
         <url>http://localhost:8282/repository/maven-snapshots/</url>
     </snapshotRepository>
-  </distributionManagement>
+</distributionManagement> 
 
   <build>
     <plugins>
