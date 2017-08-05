@@ -9,38 +9,30 @@
   <version>1.0-SNAPSHOT</version>
   <name>Parent</name>
   <description>Just a pom that makes it easy to build both projects at the same time.</description>
-<profiles>
-        <profile>
-               <id>sonar</id>
-               <activation>
-                      <activeByDefault>true</activeByDefault>
-                      </activation>
-               <properties>
-                      <sonar.host.url>
+  <profiles>
+  <profile>
+  <id>sonar</id>
+           <properties>
+                    <sonar.host.url>
                              http://localhost:9000
                              </sonar.host.url>
-                      </properties>
-         </profile>
-         </profiles>
-         <distributionManagement>
+                    </properties>
+                    </profile>
+           </profiles>
+ <distributionManagement>
     <!-- use the following if you're not using a snapshot version. -->
     <repository>
         <id>nexus</id>
         <name>RepositoryProxyRel</name>
-        <url>http://localhost:8282/repository/maven-releases/</url>
+        <url>http://localhost:8081/nexus/content/repositories/releases/</url>
     </repository>
+    <!-- use the following if you ARE using a snapshot version. -->
     <snapshotRepository>
         <id>nexus</id>
         <name>RepositoryProxySnap</name>
-        <url>http://localhost:8282/repository/maven-snapshots/</url>
+        <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
-    <site>
-        <id>site-server</id>
-        <name>Test Project Site</name>
-        <url>file:///tmp/single-module-site</url>
-    </site>
-</distributionManagement>
-
+</distributionManagement>                      
   <modules>
     <module>multi-module</module>
     <module>single-module</module>
